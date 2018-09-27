@@ -3,7 +3,9 @@
  */
 public class Deck {
 	private Card[] Deck;
+	private Card card;
 	private int topOfDeck;
+	private int numberCard = 0;
 	
 	/**
 	 * constructor - makes a deck containing one card for every 
@@ -12,10 +14,19 @@ public class Deck {
 	 */
 	public Deck()
 	{
-		//--------------------
-		// TODO: insert your code here.
-		
-		//--------------------
+		for (int d = 0; d < 2; d++){
+			for (int i = 0;i < 2; i++){
+				for (int e = 0; e < 2; e++){
+					for (int s = 0; s < 2; s++){
+						card = new Card(d,i,e,s);
+						numberCard++;
+						Deck[numberCard] = card;
+						// is there a better way to do this. I feel awful -Peter
+					}
+
+				}
+			}
+		}
 		
 	}
 	
