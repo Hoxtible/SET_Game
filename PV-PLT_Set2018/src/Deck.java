@@ -14,10 +14,10 @@ public class Deck {
 	 */
 	public Deck()
 	{
-		for (int d = 0; d < 2; d++){
-			for (int i = 0;i < 2; i++){
-				for (int e = 0; e < 2; e++){
-					for (int s = 0; s < 2; s++){
+		for (int d = 0; d < 3; d++){
+			for (int i = 0;i < 3; i++){
+				for (int e = 0; e < 3; e++){
+					for (int s = 0; s < 3; s++){
 						card = new Card(d,i,e,s);
 						numberCard++;
 						Deck[numberCard] = card;
@@ -41,7 +41,7 @@ public class Deck {
 	{
 		Card c = null;
 		//--------------------
-		// TODO: Insert your code here.
+		c = Deck[topOfDeck];
 		
 		//--------------------
 		return c;
