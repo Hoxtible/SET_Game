@@ -18,9 +18,9 @@ public class CardTest {
 
 	@Test
 	public void testToString() {
-		assertEquals("[â€¢â€¢â€¢]",			A.toString());
+		assertEquals("[•••]",			A.toString());
 		assertEquals("{o}",				B.toString());
-		assertEquals("{oo} {oo} {oo}", 	C.toString());
+		assertEquals("{••} {••} {••}", 	C.toString());
 		assertEquals("<*> <*>",			D.toString());
 		assertEquals("[ooo] [ooo]",		E.toString());
 		

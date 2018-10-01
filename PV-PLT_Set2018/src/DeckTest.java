@@ -5,7 +5,7 @@ import org.junit.Test;
 
 public class DeckTest {
 
-	private Deck theDeck();
+	private Deck theDeck;
 	
 	@Before
 	public void setUp() throws Exception {
@@ -24,20 +24,20 @@ public class DeckTest {
 		{
 			Card c = theDeck.dealCard();
 			if ("{*} {*}".equals(c.toString()))
-				numCardsA ++;
+				numCardA ++;
 			if ("<oo> <oo> <oo>".equals(c.toString()))
-				numCardsB ++;
-			if ("{â€¢â€¢} {â€¢â€¢}".equals(c.toString()))
-				numCardsC ++;
-			if ("<o> [â€¢â€¢] {***}".equals(c.toString()))
-				numCardsD ++;
+				numCardB ++;
+			if ("{••} {••}".equals(c.toString()))
+				numCardC ++;
+			if ("<o> [••] {***}".equals(c.toString()))
+				numCardD ++;
 			numCards ++;
 		}
-		assertEquals(81,numCards);
-		assertEquals(1,numCardsA);
-		assertEquals(1,numCardsB);
-		assertEquals(1,numCardsC);
-		assertEquals(0,numCardsD);
+		assertEquals(81, numCards);
+		assertEquals(1, numCardA);
+		assertEquals(1, numCardB);
+		assertEquals(1, numCardC);
+		assertEquals(0, numCardD);
 		theDeck.shuffle(); // shuffling should reset the available cards.
 		assertFalse(theDeck.outOfCards());
 		

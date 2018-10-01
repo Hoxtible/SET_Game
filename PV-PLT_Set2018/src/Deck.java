@@ -12,10 +12,17 @@ public class Deck {
 	 */
 	public Deck()
 	{
-		//--------------------
-		// TODO: insert your code here.
-		
-		//--------------------
+		Deck = new Card[81];
+		for(int i = 0; i < 3; i ++) {
+			for(int j = 0; j < 3; j ++) {
+				for(int k = 0; k < 3; k ++) {
+					for(int l = 0; l < 3; l++) {
+						Deck[i + (3 * j) + (9 * k) + (27 * l)] = new Card(i, j, k, l);
+						
+					}
+				}
+			}
+		}
 		
 	}
 	
@@ -30,8 +37,8 @@ public class Deck {
 	{
 		Card c = null;
 		//--------------------
-		// TODO: Insert your code here.
-		
+		c = Deck[topOfDeck];
+		topOfDeck += 1;		
 		//--------------------
 		return c;
 	}
@@ -47,7 +54,7 @@ public class Deck {
 		// TODO: insert your code here.
 		// Hint #1: Remember, (int)(Math.random()*52) will give you an integer from 0..51, inclusive.
 		// Hint #2: 52 is not the number you want for this deck.
-		
+		topOfDeck = (int)(Math.random()*82);
 		//--------------------
 		
 	}
@@ -60,7 +67,11 @@ public class Deck {
 	{
 		boolean pastEndOfDeck = false;
 		//--------------------
-		//TODO: insert your code here
+		if(topOfDeck > 81) {
+			pastEndOfDeck = true;
+			this.shuffle();
+			
+		}
 		
 		//--------------------
 		return pastEndOfDeck;
