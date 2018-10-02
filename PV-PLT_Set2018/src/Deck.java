@@ -96,9 +96,9 @@ public class Deck {
 	{
 		String result = "";
 		//--------------------
-		// TODO: insert your code here. (optional, but suggested)
-		// this is not something you'll use in the game, but might be handy
-		//    for debugging.
+		for(int i = 0; i < 82; i ++) {
+			result += Deck[i].toString();
+		}
 		
 		//--------------------
 		return result;

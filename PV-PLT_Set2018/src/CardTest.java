@@ -11,14 +11,14 @@ public class CardTest {
 	public void setUp() throws Exception {
 		A = new Card(2,3,1,0);
 		B = new Card(1,1,1,1);
-		C = new Card(2,2,3,1);
+		C = new Card(1,2,3,1);
 		D = new Card(0,1,2,2);
 		E = new Card(1,3,2,0);
 	}
 
 	@Test
 	public void testToString() {
-		assertEquals("[â€¢â€¢â€¢]",			A.toString());
+		assertEquals("[•••]",			A.toString());
 		assertEquals("{o}",				B.toString());
 		assertEquals("{oo} {oo} {oo}", 	C.toString());
 		assertEquals("<*> <*>",			D.toString());

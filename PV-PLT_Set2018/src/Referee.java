@@ -11,6 +11,9 @@
 public class Referee {
 	// TODO: decide which private member variables the Referee class needs and declare them here.
 	
+	public Referee() {
+		
+	}
 	/**
 	 * constructor
 	 */
