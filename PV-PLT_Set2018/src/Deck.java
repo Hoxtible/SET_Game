@@ -4,6 +4,7 @@
 public class Deck {
 	private Card[] Deck;
 	private Card card;
+	private Card tempCard;
 	private int topOfDeck;
 	private int numberCard = 0;
 	
@@ -63,9 +64,17 @@ public class Deck {
 		// TODO: insert your code here.
 		// Hint #1: Remember, (int)(Math.random()*52) will give you an integer from 0..51, inclusive.
 		// Hint #2: 52 is not the number you want for this deck.
-		topOfDeck = (int)(Math.random()*82);
+		for (int i = 0; i < 82; i++) {
+			SwapCards(i,(int)(Math.random()*82));
+		}
+		topOfDeck = 0;
 		//--------------------
 		
+	}
+	public void SwapCards(int cardLocation1,int cardLocation2){
+		tempCard = Deck[cardLocation1];
+		Deck[cardLocation1] = Deck[cardLocation2];
+		Deck[cardLocation2] = tempCard;
 	}
 	
 	/**
