@@ -14,7 +14,7 @@ public class Deck {
 	 */
 	public Deck()
 	{
-<<<<<<< HEAD
+
 		for (int d = 0; d < 3; d++){
 			for (int i = 0;i < 3; i++){
 				for (int e = 0; e < 3; e++){
@@ -24,22 +24,14 @@ public class Deck {
 						Deck[numberCard] = card;
 						// is there a better way to do this. I feel awful -Peter
 					}
-
-=======
-		Deck = new Card[81];
-		for(int i = 0; i < 3; i ++) {
-			for(int j = 0; j < 3; j ++) {
-				for(int k = 0; k < 3; k ++) {
-					for(int l = 0; l < 3; l++) {
-						Deck[i + (3 * j) + (9 * k) + (27 * l)] = new Card(i, j, k, l);
 						
 					}
->>>>>>> Pierre
+
 				}
 			}
 		}
 		
-	}
+
 	
 	/**
 	 * dealCard - returns the card at the "top" of the deck, moving the
@@ -53,11 +45,9 @@ public class Deck {
 		Card c = null;
 		//--------------------
 		c = Deck[topOfDeck];
-<<<<<<< HEAD
-		
-=======
-		topOfDeck += 1;		
->>>>>>> Pierre
+
+		topOfDeck += 1;
+
 		//--------------------
 		return c;
 	}
