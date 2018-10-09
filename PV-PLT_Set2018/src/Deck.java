@@ -6,7 +6,7 @@ public class Deck {
 	private Card card;
 	private Card tempCard;
 	private int topOfDeck;
-	private int numberCard = 0;
+	private int numberCard;
 	
 	/**
 	 * constructor - makes a deck containing one card for every 
@@ -15,14 +15,17 @@ public class Deck {
 	 */
 	public Deck()
 	{
-
+		numberCard = 0;
+		Deck = new Card [81];
+		topOfDeck = 0;
+		
 		for (int d = 0; d < 3; d++){
-			for (int i = 0;i < 3; i++){
-				for (int e = 0; e < 3; e++){
+			for (int i = 1; i < 4; i++){
+				for (int e = 1; e < 4; e++){
 					for (int s = 0; s < 3; s++){
 						card = new Card(d,i,e,s);
-						numberCard++;
 						Deck[numberCard] = card;
+						numberCard++;
 						// is there a better way to do this. I feel awful -Peter
 					}
 						
@@ -44,12 +47,11 @@ public class Deck {
 	public Card dealCard()
 	{
 		Card c = null;
-		//--------------------
+		
+		this.outOfCards();
 		c = Deck[topOfDeck];
-
 		topOfDeck += 1;
 
-		//--------------------
 		return c;
 	}
 	
@@ -64,16 +66,17 @@ public class Deck {
 		// TODO: insert your code here.
 		// Hint #1: Remember, (int)(Math.random()*52) will give you an integer from 0..51, inclusive.
 		// Hint #2: 52 is not the number you want for this deck.
-		for (int i = 0; i < 82; i++) {
-			SwapCards(i,(int)(Math.random()*82));
+		for (int i = 0; i < 81; i++) {
+			SwapCards(i,(int)(Math.random()*81));
 		}
 		topOfDeck = 0;
 		//--------------------
 		
 	}
 	public void SwapCards(int cardLocation1,int cardLocation2){
-		tempCard = Deck[cardLocation1];
-		Deck[cardLocation1] = Deck[cardLocation2];
+		Card tempCard = Deck[cardLocation1];
+		Card tempCard2 = Deck[cardLocation2];
+		Deck[cardLocation1] = tempCard2;
 		Deck[cardLocation2] = tempCard;
 	}
 	
@@ -85,7 +88,7 @@ public class Deck {
 	{
 		boolean pastEndOfDeck = false;
 		//--------------------
-		if(topOfDeck > 81) {
+		if(topOfDeck > 80) {
 			pastEndOfDeck = true;
 			this.shuffle();
 			
@@ -105,8 +108,9 @@ public class Deck {
 	{
 		String result = "";
 		//--------------------
-		for(int i = 0; i < 82; i ++) {
+		for(int i = 0; i < 81; i ++) {
 			result += Deck[i].toString();
+			result += " ";
 		}
 		
 		//--------------------

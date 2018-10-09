@@ -84,6 +84,7 @@ public class Card {
 			} else {
 				cardGroup = " ";
 			}
+			
 			if(whichBracket == 0) {
 				cardGroup += "[";
 				for(int j = 0; j < groupSize; j++) {
@@ -99,6 +100,7 @@ public class Card {
 				}
 				cardGroup += "]";
 			}
+			
 			if(whichBracket == 1) {
 				cardGroup += "{";
 				for(int j = 0; j < groupSize; j++) {

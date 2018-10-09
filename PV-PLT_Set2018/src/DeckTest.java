@@ -34,6 +34,7 @@ public class DeckTest {
 				numCardsD ++;
 			numCards ++;
 		}
+		System.out.println(theDeck);
 		assertEquals(81,numCards);
 		assertEquals(1,numCardsA);
 		assertEquals(1,numCardsB);

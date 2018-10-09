@@ -10,7 +10,7 @@ public class Board {
 	
 	private Card[] displayedCards;
 	private Deck theDeck = new Deck();
-	/**
+	/** 
 	 * constructor - set up the board's variables, including dealing 12 cards.
 	 */
 	public Board()
@@ -60,21 +60,21 @@ public class Board {
 	 * c) the size of the groups are the same on all three cards; and d)
 	 * the icon is the same on all three cards.
 	 * Here's another example of a "SET":
-	 * 0: {â€¢} {â€¢}
+	 * 0: {•} {•}
 	 * 1: {ooo} {ooo}
 	 * 2: {**} {**}
 	 * In this case the brackets and number of groups are constant, but
 	 * the icon and the size of the groups are all different.
 	 * Here's an example of a non-"SET."
 	 * 0: {o} {o}
-	 * 1: <â€¢> <â€¢> <â€¢>
+	 * 1: <•> <•> <•>
 	 * 2: [o]
 	 * In this case, the group sizes are all the same, the number of groups
 	 * are all different, the brackets are all different, BUT two of the
-	 * cards have the icon "o" and one has the icon "â€¢." So this is NOT a "SET."
+	 * cards have the icon "o" and one has the icon "•." So this is NOT a "SET."
 	 * Another example of a non-"SET.":
 	 * 0: {**} {**} {**}
-	 * 1: {â€¢}
+	 * 1: {•}
 	 * 2: <ooo> <ooo>
 	 * In this case, it is the bracket types that fail; there are two cards with
 	 * curly brackets and one with angle brackets.
@@ -88,8 +88,19 @@ public class Board {
 		// Hint: there is a fancy math trick for making this work, involving
 		//       factors of 3. You should not need a ton of "if" statements!!!!
 		//       See me if you have questions.
-		// TODO: insert your code here.
-		
+		if((a.giveIcon() + b.giveIcon() + c.giveIcon()) % 3 == 0) {
+			legal = true;
+		}
+		if((a.giveGroupSize() + b.giveGroupSize() + c.giveGroupSize()) % 3 == 1) {
+			legal = true;
+		}
+		if((a.giveNumGroups() + b.giveNumGroups() + c.giveNumGroups()) % 3 == 1) {
+			legal = true;
+		}
+		if((a.giveBracket() + b.giveBracket() + c.giveBracket()) % 3 == 0) {
+			legal = true;
+		}
+		                  
 		//--------------------
 		return legal;
 	}
@@ -151,10 +162,9 @@ public class Board {
 	public String toString()
 	{
 		String result = "";
-		//--------------------
-		// TODO: insert your code here.
-		
-		//--------------------
+		for(int i = 0; i < 15; i ++) {
+			
+		}
 		return result;
 	}
 }

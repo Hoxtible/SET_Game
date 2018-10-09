@@ -27,6 +27,11 @@ public class CardTest {
 		assertNotEquals("<ooo>", 		A.toString());
 		assertNotEquals("{oo}", 		B.toString());
 		assertNotEquals("",				C.toString());
+		System.out.println(A);
+		System.out.println(B);
+		System.out.println(C);
+		System.out.println(D);
+		System.out.println(E);
 	}
 
 }
