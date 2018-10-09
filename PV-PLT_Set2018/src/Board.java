@@ -61,21 +61,21 @@ public class Board {
 	 * c) the size of the groups are the same on all three cards; and d)
 	 * the icon is the same on all three cards.
 	 * Here's another example of a "SET":
-	 * 0: {•} {•}
+	 * 0: {ï¿½} {ï¿½}
 	 * 1: {ooo} {ooo}
 	 * 2: {**} {**}
 	 * In this case the brackets and number of groups are constant, but
 	 * the icon and the size of the groups are all different.
 	 * Here's an example of a non-"SET."
 	 * 0: {o} {o}
-	 * 1: <•> <•> <•>
+	 * 1: <ï¿½> <ï¿½> <ï¿½>
 	 * 2: [o]
 	 * In this case, the group sizes are all the same, the number of groups
 	 * are all different, the brackets are all different, BUT two of the
-	 * cards have the icon "o" and one has the icon "•." So this is NOT a "SET."
+	 * cards have the icon "o" and one has the icon "ï¿½." So this is NOT a "SET."
 	 * Another example of a non-"SET.":
 	 * 0: {**} {**} {**}
-	 * 1: {•}
+	 * 1: {ï¿½}
 	 * 2: <ooo> <ooo>
 	 * In this case, it is the bracket types that fail; there are two cards with
 	 * curly brackets and one with angle brackets.
@@ -170,11 +170,11 @@ public class Board {
 	public String toString()
 	{
 		String result = "";
-<<<<<<< HEAD
+
 		for(int i = 0; i < 15; i ++) {
 			
 		}
-=======
+
 		//--------------------
 
 		for (int i = 0; i<15; i++){
@@ -186,7 +186,7 @@ public class Board {
 			}
 		}
 		//--------------------
->>>>>>> 8ca8702811c4517bd68af6649858cb57a8498691
+
 		return result;
 	}
 }
