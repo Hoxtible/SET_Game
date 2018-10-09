@@ -37,7 +37,8 @@ public class Board {
 	{
 		Card c = null;
 		//--------------------
-		// TODO: Insert your code here
+
+		c = displayedCards[loc];
 		
 		//--------------------
 		return c;
@@ -103,7 +104,14 @@ public class Board {
 	public void dealThreeCards()
 	{
 		//--------------------
-		// TODO: insert your code here.
+		//
+		for (int b = 0; b<14; b++){
+			int threeCards = 0;
+			if (displayedCards[b] == null && threeCards < 3) {
+				displayedCards[b] = theDeck.dealCard();
+				threeCards++;
+			}
+		}
 		
 		//--------------------
 	}
@@ -152,8 +160,15 @@ public class Board {
 	{
 		String result = "";
 		//--------------------
-		// TODO: insert your code here.
-		
+
+		for (int i = 0; i<15; i++){
+			int newLine = 0;
+
+			if(newLine == 5 || newLine == 10 || newLine == 15){
+				result = result + "\n"+(i/5 -1)+": ";
+
+			}
+		}
 		//--------------------
 		return result;
 	}
