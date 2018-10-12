@@ -42,12 +42,9 @@ public class BoardTest
 	@Test
 	public void testRemove3AndGetNum()
 	{
-		//-------------------- 
-		// TODO: Insert your code here. 
-		// When you have, delete the fail message below.
+		Board thirdBoard = new Board();	
 		
-		//--------------------
-		fail("you need to write this test.");
+		assertEquals(12, thirdBoard.getNumCardsOnBoard());
 	}
 	
 }

@@ -89,18 +89,16 @@ public class Board {
 		// Hint: there is a fancy math trick for making this work, involving
 		//       factors of 3. You should not need a ton of "if" statements!!!!
 		//       See me if you have questions.
+		if(a == null || b == null || c == null || c == a || c == b || a == b) {
+			return legal;
+		}
+		
 		if((a.giveIcon() + b.giveIcon() + c.giveIcon()) % 3 == 0) {
-			legal = true;
-		}
-		if((a.giveGroupSize() + b.giveGroupSize() + c.giveGroupSize()) % 3 == 1) {
-			legal = true;
-		}
-		if((a.giveNumGroups() + b.giveNumGroups() + c.giveNumGroups()) % 3 == 1) {
-			legal = true;
-		}
-		if((a.giveBracket() + b.giveBracket() + c.giveBracket()) % 3 == 0) {
-			legal = true;
-		}
+			if((a.giveGroupSize() + b.giveGroupSize() + c.giveGroupSize()) % 3 == 0) {
+				if((a.giveNumGroups() + b.giveNumGroups() + c.giveNumGroups()) % 3 == 0) {
+					if((a.giveBracket() + b.giveBracket() + c.giveBracket()) % 3 == 0) {
+						legal = true;
+		}}}}
 		                  
 		//--------------------
 		return legal;
@@ -116,7 +114,7 @@ public class Board {
 	{
 		//--------------------
 		//
-		for (int b = 0; b<14; b++){
+		for (int b = 0; b < 15; b++){
 			int threeCards = 0;
 			if (displayedCards[b] == null && threeCards < 3) {
 				displayedCards[b] = theDeck.dealCard();
@@ -148,6 +146,20 @@ public class Board {
 	 //    example of what to write here.
 	 // 3: write the method and make sure that it passes the test.
 	
+	
+	public void remove3Cards(int cardLocation0, int cardLocation1, int cardLocation2) {
+		if (cardLocation0 != cardLocation1 && cardLocation0 != cardLocation2 && cardLocation1 != cardLocation2) {
+			if(displayedCards[cardLocation0] != null && displayedCards[cardLocation1] != null && displayedCards[cardLocation2] != null) {
+				if(cardLocation0 <= 14 && cardLocation0 >= 0 && cardLocation1 <= 14 && cardLocation1 >= 0 && cardLocation2 <= 14 && cardLocation2 >= 0) {
+					displayedCards[cardLocation0] = null;
+					displayedCards[cardLocation1] = null;
+					displayedCards[cardLocation2] = null;
+				}
+			}
+		}
+	}
+	
+	
 	/**
 	 * getNumCardsOnBoard
 	 * @return the number of non-null cards on the board
@@ -156,7 +168,11 @@ public class Board {
 	{
 		int numCards = 0;
 		//--------------------
-		// TODO: insert your code here
+		for(int i = 0; i < 15; i ++) {
+			if(displayedCards[i] != null) {
+				numCards ++;
+			}
+		}
 		
 		//--------------------
 		return numCards;
