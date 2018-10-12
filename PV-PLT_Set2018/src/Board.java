@@ -8,7 +8,7 @@
  */
 public class Board {
 	
-	private Card[] displayedCards;
+	public Card[] displayedCards;
 	private Deck theDeck = new Deck();
 	/** 
 	 * constructor - set up the board's variables, including dealing 12 cards.
@@ -157,6 +157,7 @@ public class Board {
 		int numCards = 0;
 		//--------------------
 		// TODO: insert your code here
+
 		
 		//--------------------
 		return numCards;
@@ -169,20 +170,19 @@ public class Board {
 	 */
 	public String toString()
 	{
-		String result = "";
+		String result = "0: ";
 
-		for(int i = 0; i < 15; i ++) {
-			
-		}
-
-		//--------------------
 
 		for (int i = 0; i<15; i++){
-			int newLine = 0;
+			if (displayedCards[i] != null) {
 
-			if(newLine == 5 || newLine == 10 || newLine == 15){
-				result = result + "\n"+(i/5 -1)+": ";
 
+				if (i == 3 || i == 6 || i == 9 || i == 12) {
+					result = result + "\n" + (i / 3) + ": ";
+
+
+				}
+				result = result + "|" + displayedCards[i];
 			}
 		}
 		//--------------------
