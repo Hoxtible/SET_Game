@@ -43,8 +43,9 @@ public class BoardTest
 	public void testRemove3AndGetNum()
 	{
 		Board thirdBoard = new Board();	
+		thirdBoard.remove3Cards(0, 1, 2);
 		
-		assertEquals(12, thirdBoard.getNumCardsOnBoard());
+		assertEquals(9, thirdBoard.getNumCardsOnBoard());
 	}
 	
 }
