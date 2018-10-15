@@ -58,13 +58,26 @@ public class Referee {
 			System.out.println("Press 1 when You Find a Set");
 			getInt();
 			System.out.print("Which Player Found The Set. Enter their player number.");
+
 			whoPlaying = getInt();
 
+			if(whoPlaying > manyPlaying){
+				System.out.println("Number too big.");
+				whoPlaying = getInt();
+			}
 			for (int i = 0; i < 3; i++) {
 				System.out.println("Which Row Has a Card");
 				row = getInt();
+				if (row > 4){
+					System.out.println("Number too big.");
+					row = getInt();
+				}
 				System.out.println("Which Card is it in the row");
 				card = getInt();
+				if (card > 3){
+					System.out.println("Number too big.");
+					card = getInt();
+				}
 				cardsPicked[i] = row * 3 + card;
 			}
 			if (theBoard.isLegal(theBoard.displayedCards[cardsPicked[0]], theBoard.displayedCards[cardsPicked[1]], theBoard.displayedCards[cardsPicked[2]]) == true) {
