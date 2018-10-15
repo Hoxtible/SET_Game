@@ -59,6 +59,7 @@ public class Referee {
 			getInt();
 			System.out.print("Which Player Found The Set. Enter their player number.");
 			whoPlaying = getInt();
+
 			for (int i = 0; i < 3; i++) {
 				System.out.println("Which Row Has a Card");
 				row = getInt();
@@ -68,7 +69,7 @@ public class Referee {
 			}
 			if (theBoard.isLegal(theBoard.displayedCards[cardsPicked[0]], theBoard.displayedCards[cardsPicked[1]], theBoard.displayedCards[cardsPicked[2]]) == true) {
 				people[whoPlaying]++;
-
+				theBoard.remove3Cards(cardsPicked[0],cardsPicked[1],cardsPicked[2]);
 				theBoard.dealThreeCards();
 			}
 
@@ -82,7 +83,7 @@ public class Referee {
 	}
 	public int getInt()
 	{
-		Scanner keyboardReader = new Scanner(System.in);	
+		Scanner keyboardReader = new Scanner(System.in);
 		int result;
 		while (true)
 		{

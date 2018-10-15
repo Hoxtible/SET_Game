@@ -168,16 +168,16 @@ public class Board {
 	{
 		int numCards = 0;
 		//--------------------
-<<<<<<< HEAD
+
 		for(int i = 0; i < 15; i ++) {
 			if(displayedCards[i] != null) {
 				numCards ++;
 			}
 		}
-=======
+
 		// TODO: insert your code here
 
->>>>>>> 49b8cfb4d47736c0f6f99dfc441f87eb8a242f20
+
 		
 		//--------------------
 		return numCards;
