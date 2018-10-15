@@ -80,10 +80,13 @@ public class Referee {
 				}
 				cardsPicked[i] = row * 3 + card;
 			}
+
 			if (theBoard.isLegal(theBoard.displayedCards[cardsPicked[0]], theBoard.displayedCards[cardsPicked[1]], theBoard.displayedCards[cardsPicked[2]]) == true) {
 				people[whoPlaying]++;
 				theBoard.remove3Cards(cardsPicked[0],cardsPicked[1],cardsPicked[2]);
 				theBoard.dealThreeCards();
+			}else{
+				System.out.print("Move Not Legal");
 			}
 
 
