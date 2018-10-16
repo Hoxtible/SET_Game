@@ -13,16 +13,28 @@ import java.util.Scanner;
  */
 public class Referee {
 	private Board theBoard;
-	// TODO: decide which private member variables the Referee class needs and declare them here.
 	
-	public Referee() {
-		theBoard = new Board();
-	}
 	/**
 	 * constructor
 	 */
-	// TODO: write the Referee's constructor method.
+	public Referee() {
+		theBoard = new Board();
+	}
 	
+	public int getLegalInt(int arg, int lowerBound, int upperBound) {
+		boolean legal = false;
+		
+		while(!legal) {
+			if(arg > lowerBound && arg < upperBound) {
+				legal = true;
+				return arg;
+			} else {
+			System.out.println("That was not a legal argument, please try again.");
+			arg = getInt();
+			}
+		}
+		return 80000;
+	}
 	/**
 	 * playGame - the main game loop for the program.
 	 */
@@ -43,41 +55,45 @@ public class Referee {
 		System.out.println("Playing game."); // placeholder code
 
 		System.out.println("How many People are playing");
-		manyPlaying = getInt();
-
+		
+		
+		
+		manyPlaying = getLegalInt(getInt(), 0, 100);
+		
 		people = new int[manyPlaying];
 
-		for( int a = 0; a < manyPlaying; a++){
+		for(int a = 0; a < manyPlaying; a++){
 			people[a] = 0;
 		}
 
 
 		while (playingGame == true) {
-			System.out.println("It is player "+whoPlaying+"'s turn.");
 			System.out.println(theBoard);
 			System.out.println("Press 1 when You Find a Set");
-			getInt();
-			System.out.print("Which Player Found The Set. Enter their player number.");
-
-			whoPlaying = getInt();
-
-			if(whoPlaying > manyPlaying){
-				System.out.println("Number too big.");
-				whoPlaying = getInt();
+			if(getInt() != 1) { 
+				System.out.println("Wrong number key pressed! Continuing anyways, though I don't appreciate that.");
+			} else {
 			}
+			System.out.print("Which Player Found The Set? Enter their player number.");
+			
+			whoPlaying = getLegalInt(getInt(), -1, manyPlaying);
+
 			for (int i = 0; i < 3; i++) {
-				System.out.println("Which Row Has a Card");
-				row = getInt();
-				if (row > 4){
-					System.out.println("Number too big.");
-					row = getInt();
-				}
+				System.out.println("Which Row Has a Card?");
+				row = getLegalInt(getInt(), -1, 4); //getInt();
+				
+//				if (row > 4 || row < 0){
+//					System.out.println("Number too big or too small.");
+//					row = getInt();
+//				}
+				
 				System.out.println("Which Card is it in the row");
-				card = getInt();
-				if (card > 3){
-					System.out.println("Number too big.");
-					card = getInt();
-				}
+				card = getLegalInt(getInt(), -1, 3); //getInt();
+				
+//				if (card > 3){
+//					System.out.println("Number too big.");
+//					card = getInt();
+//				}
 				cardsPicked[i] = row * 3 + card;
 			}
 
@@ -85,8 +101,10 @@ public class Referee {
 				people[whoPlaying]++;
 				theBoard.remove3Cards(cardsPicked[0],cardsPicked[1],cardsPicked[2]);
 				theBoard.dealThreeCards();
+				System.out.println("That was a set!");
 			}else{
-				System.out.print("Move Not Legal");
+				System.out.println("Move Not Legal, reprinting the board...");
+				System.out.println("");
 			}
 
 
